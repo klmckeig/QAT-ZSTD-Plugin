@@ -292,6 +292,8 @@ void *benchmark(void *args)
         const unsigned char *tmpSrcBuffer = srcBuffer;
         size_t tmpDestSize = destSize;
         for (nbChunk = 0; nbChunk < csCount; nbChunk++) {
+                        printf("Compressing: %d dstbuf:%d\n", chunkSizes[nbChunk], tmpDestSize);
+            
             GETTIME(startTicks);
             cSize = ZSTD_compress2(zc, tmpDestBuffer, tmpDestSize, tmpSrcBuffer,
                                    chunkSizes[nbChunk]);

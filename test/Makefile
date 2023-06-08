@@ -46,7 +46,7 @@ default: test benchmark
 
 all: test benchmark
 
-test: test.c
+test: hybrid_test.c
 	$(Q)$(MAKE) -C $(LIB)
 	$(CC) $^ $(LDFLAGS) -o $@
 
